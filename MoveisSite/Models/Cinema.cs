@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MoveisSite.Models
 {
@@ -9,5 +10,8 @@ namespace MoveisSite.Models
         public string Logo { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+
+        //Relationships
+        public List<Movie> Movies { get; set; }
     }
 }
