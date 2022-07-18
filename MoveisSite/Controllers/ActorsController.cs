@@ -17,7 +17,7 @@ namespace MoveisSite.Controllers
         {
             var allActors = await _context.Actors.ToListAsync();
 
-            return View();
+            return View(allActors);
         }
     }
 }

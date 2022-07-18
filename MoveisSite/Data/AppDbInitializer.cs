@@ -66,7 +66,7 @@ namespace MoveisSite.Data
                         {
                             FullName = "Arnold Shwarsneger",
                             Bio = "This is the Bio of the second actor",
-                            ProfilePictureURL = @"D:\Project\CSharp\MoveisSite\MoveisSite\wwwroot\Image\Actor\Arnold Shwarsneger.jpg"
+                            ProfilePictureURL = "~/Image/Actor/Arnold Shwarsneger.jpg"
                         },
 
                         new Actor()
