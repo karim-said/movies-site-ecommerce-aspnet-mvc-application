@@ -3,19 +3,21 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace MoveisSite.Controllers
 {
-    public class ActorsController : Controller
+    public class CinemaController : Controller
     {
         private readonly AppDbContext _context;
 
-        public ActorsController(AppDbContext context)
+        public CinemaController(AppDbContext context)
         {
             _context = context;
         }
+
         public async Task<IActionResult> Index()
         {
-            var allActors = await _context.Actors.ToListAsync();
+            var allCinemas = await _context.Cinemas.ToListAsync();
 
             return View();
         }

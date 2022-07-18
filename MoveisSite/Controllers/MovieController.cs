@@ -1,21 +1,22 @@
-﻿using MoveisSite.Data;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MoveisSite.Data;
+using System.Threading.Tasks;
 
 namespace MoveisSite.Controllers
 {
-    public class ActorsController : Controller
+    public class MovieController : Controller
     {
         private readonly AppDbContext _context;
 
-        public ActorsController(AppDbContext context)
+        public MovieController(AppDbContext context)
         {
             _context = context;
         }
+
         public async Task<IActionResult> Index()
         {
-            var allActors = await _context.Actors.ToListAsync();
+            var allMovies = await _context.Movies.ToListAsync();
 
             return View();
         }
