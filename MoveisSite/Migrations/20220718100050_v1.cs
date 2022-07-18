@@ -13,9 +13,9 @@ namespace MoveisSite.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProfilePictureURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Bio = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ProfilePictureURL = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: false),
+                    FullName = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
+                    Bio = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,9 +28,9 @@ namespace MoveisSite.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Logo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Logo = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -43,9 +43,9 @@ namespace MoveisSite.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProfilePictureURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Bio = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ProfilePictureURL = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: false),
+                    FullName = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
+                    Bio = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,10 +58,12 @@ namespace MoveisSite.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: false),
+                    Country = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
+                    Year = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: true),
                     Price = table.Column<double>(type: "float", nullable: false),
-                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImageURL = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: true),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     MovieCategory = table.Column<int>(type: "int", nullable: false),

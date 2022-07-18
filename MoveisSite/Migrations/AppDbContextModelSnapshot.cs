@@ -27,13 +27,22 @@ namespace MoveisSite.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Bio")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(512)");
 
                     b.Property<string>("FullName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(64)");
 
                     b.Property<string>("ProfilePictureURL")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(512)");
 
                     b.HasKey("Id");
 
@@ -63,13 +72,22 @@ namespace MoveisSite.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(512)");
 
                     b.Property<string>("Logo")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(512)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(64)");
 
                     b.HasKey("Id");
 
@@ -86,20 +104,33 @@ namespace MoveisSite.Migrations
                     b.Property<int>("CinemaId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(64)");
+
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(512)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(512)");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImageURL")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(512)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(512)");
 
                     b.Property<int>("MovieCategory")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(512)");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
@@ -109,6 +140,12 @@ namespace MoveisSite.Migrations
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Year")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(512)");
 
                     b.HasKey("Id");
 
@@ -127,13 +164,22 @@ namespace MoveisSite.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Bio")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(512)");
 
                     b.Property<string>("FullName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(64)");
 
                     b.Property<string>("ProfilePictureURL")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(512)");
 
                     b.HasKey("Id");
 
