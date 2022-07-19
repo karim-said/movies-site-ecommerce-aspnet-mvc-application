@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MoveisSite.Controllers
 {
-    public class ProducerController : Controller
+    public class ProducersController : Controller
     {
         private readonly AppDbContext _context;
 
-        public ProducerController(AppDbContext context)
+        public ProducersController(AppDbContext context)
         {
             _context = context;
         }
@@ -19,7 +19,7 @@ namespace MoveisSite.Controllers
         {
             var allProducers = await _context.Producers.ToListAsync();
 
-            return View();
+            return View(allProducers);
         }
     }
 }
