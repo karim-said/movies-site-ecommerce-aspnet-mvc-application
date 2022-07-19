@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace MoveisSite.Controllers
 {
-    public class MovieController : Controller
+    public class MoviesController : Controller
     {
         private readonly AppDbContext _context;
 
-        public MovieController(AppDbContext context)
+        public MoviesController(AppDbContext context)
         {
             _context = context;
         }
@@ -18,7 +18,7 @@ namespace MoveisSite.Controllers
         {
             var allMovies = await _context.Movies.ToListAsync();
 
-            return View();
+            return View(allMovies);
         }
     }
 }
