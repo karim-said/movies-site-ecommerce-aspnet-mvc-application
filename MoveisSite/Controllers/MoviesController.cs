@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using MoveisSite.Data;
+﻿using System.Linq;
 using System.Threading.Tasks;
+using MoveisSite.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace MoveisSite.Controllers
 {
@@ -16,7 +18,10 @@ namespace MoveisSite.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var allMovies = await _context.Movies.ToListAsync();
+            var allMovies = await _context.Movies
+                            .Include(m => m.Cinema)
+                            .OrderBy(m => m.Name)
+                            .ToListAsync();
 
             return View(allMovies);
         }
