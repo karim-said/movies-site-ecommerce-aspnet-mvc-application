@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MoveisSite.Controllers
 {
-    public class CinemaController : Controller
+    public class CinemasController : Controller
     {
         private readonly AppDbContext _context;
 
-        public CinemaController(AppDbContext context)
+        public CinemasController(AppDbContext context)
         {
             _context = context;
         }
@@ -19,7 +19,7 @@ namespace MoveisSite.Controllers
         {
             var allCinemas = await _context.Cinemas.ToListAsync();
 
-            return View();
+            return View(allCinemas);
         }
     }
 }
