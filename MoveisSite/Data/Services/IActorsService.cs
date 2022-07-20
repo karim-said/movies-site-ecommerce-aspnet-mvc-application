@@ -1,6 +1,6 @@
-﻿using MoveisSite.Models; 
-using System.Collections.Generic;
+﻿using MoveisSite.Models;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace MoveisSite.Data.Services
 {

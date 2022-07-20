@@ -1,7 +1,6 @@
 ﻿using MoveisSite.Data;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using MoveisSite.Data.Services;
 
 namespace MoveisSite.Controllers

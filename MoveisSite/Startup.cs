@@ -5,6 +5,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MoveisSite.Data.Services;
 
 namespace MoveisSite
 {
@@ -24,7 +25,10 @@ namespace MoveisSite
             services.AddDbContext<AppDbContext>(options => options
                     .UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-                     services.AddControllersWithViews();
+            //Services configuration
+            services.AddScoped<IActorsService, ActorsService>();
+
+            services.AddControllersWithViews();
         }
         
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
