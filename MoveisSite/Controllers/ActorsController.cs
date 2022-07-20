@@ -2,20 +2,21 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MoveisSite.Data.Services;
 
 namespace MoveisSite.Controllers
 {
     public class ActorsController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IActorsService _service;
 
-        public ActorsController(AppDbContext context)
+        public ActorsController(IActorsService service)
         {
-            _context = context;
+            _service = service;
         }
         public async Task<IActionResult> Index()
         {
-            var allActors = await _context.Actors.ToListAsync();
+            var allActors = await _service.GetAll();
 
             return View(allActors);
         }
