@@ -1,5 +1,4 @@
-﻿using MoveisSite.Data;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MoveisSite.Data.Services;
 
@@ -18,6 +17,12 @@ namespace MoveisSite.Controllers
             var allActors = await _service.GetAll();
 
             return View(allActors);
+        }
+
+        //Get Actors/Create
+        public async Task<IActionResult> Create()
+        {
+            return View();
         }
     }
 }
