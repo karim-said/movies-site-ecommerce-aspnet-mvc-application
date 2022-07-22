@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MoveisSite.Data.Services;
+using MoveisSite.Models;
 
 namespace MoveisSite.Controllers
 {
@@ -23,6 +24,18 @@ namespace MoveisSite.Controllers
         public async Task<IActionResult> Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Bio")]Actor actor)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View(actor);
+            }
+
+            _service.Add(actor);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
