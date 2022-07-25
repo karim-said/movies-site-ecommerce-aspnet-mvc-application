@@ -20,11 +20,11 @@ namespace MoveisSite.Controllers
             return View(allActors);
         }
 
-        //Get Actors/Create
-        public async Task<IActionResult> Create()
-        {
-            return  View();
-        }
+        ////Get Actors/Create
+        //public async Task<IActionResult> Create()
+        //{
+        //    return View();
+        //}
 
         [HttpPost]
         public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Bio")]Actor actor)
@@ -43,9 +43,31 @@ namespace MoveisSite.Controllers
         {
             var actorDetails = await _service.GetByIdAsync(id);
             if (actorDetails == null)
-                return View("Empty");
+                return View("Not found");
 
             return View(actorDetails);
+        }
+
+        //Get Actors/Create
+        public async Task<IActionResult> Edit(int id)
+        {
+            var actor = await _service.GetByIdAsync(id);
+            if (actor == null)
+                return View("Not found");
+
+            return View(actor);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, [Bind("id,FullName,ProfilePictureURL,Bio")] Actor actor)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(actor);
+            }
+
+            await _service.UpdateAsync(id, actor);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
